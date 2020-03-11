@@ -11,36 +11,41 @@ pdf = n.divide(no_of_pixels, N)
 print(pdf)
 
 cdf = n.array([])
-sum = 0
+_sum = 0
 
 for i in range(0, len(pdf)):
-    sum = sum + pdf[i]
-    cdf=n.append(cdf,sum)
+    _sum = _sum + pdf[i]
+    cdf = n.append(cdf, _sum)
 
 print(cdf)
 
+k = len(pixelvalue) - 1
 
-k=len(pixelvalue)-1
-
-multipliedarray=n.multiply(cdf,k)
+multipliedarray = n.multiply(cdf, k)
 print(multipliedarray)
 
-rounded_values=n.round(multipliedarray)
+rounded_values = n.round(multipliedarray)
 print(rounded_values)
 
+newPixelCount = n.zeros(len(pixelvalue))
 
-newPixelCount =n.array([])
-for i in range(0,len(pixelvalue)):
-    sum=0
-    for j  in range(0,len(pixelvalue)):
-        if pixelvalue[i]==rounded_values[j]:
-            sum=sum+no_of_pixels[j]
-            newPixelCount = n.append(newPixelCount, sum)
+
+
+for x in range(0,len(pixelvalue)):
+    for y in range(0,len(pixelvalue)):
+
+for i in range(0,len(rounded_values)):
+    sum_=no_of_pixels[i]
+    for j in range(0,len(rounded_values)):
+        if rounded_values[i]==rounded_values(j) and i!=j:
+            sum_=sum_+no_of_pixels[j]
+            i=i+1                 v  b    mmnhv u975
         else:
-            newPixelCount = n.append(newPixelCount, sum)
-            
+            sum_=sum_+0
 
 
 
 
+print(pixelvalue)
+print(no_of_pixels)
 print(newPixelCount)
